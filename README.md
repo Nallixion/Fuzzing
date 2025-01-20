@@ -1,0 +1,2 @@
+# Fuzzing
+Fuzz dotnet projects
