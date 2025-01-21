@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{6A33BE94-AEA3-4665-B630-5B1397684674}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuzzLib", "src\FuzzLib\FuzzLib.csproj", "{21505BA6-9573-4E11-90D2-EAB6C1B0B7FC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -10,5 +14,14 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{21505BA6-9573-4E11-90D2-EAB6C1B0B7FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21505BA6-9573-4E11-90D2-EAB6C1B0B7FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21505BA6-9573-4E11-90D2-EAB6C1B0B7FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21505BA6-9573-4E11-90D2-EAB6C1B0B7FC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{21505BA6-9573-4E11-90D2-EAB6C1B0B7FC} = {6A33BE94-AEA3-4665-B630-5B1397684674}
 	EndGlobalSection
 EndGlobal
