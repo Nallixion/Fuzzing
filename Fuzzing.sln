@@ -11,6 +11,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{62F5B20C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuzzLib.Tests", "tests\FizzLib.Tests\FuzzLib.Tests.csproj", "{95CAA45D-0560-4383-A9D7-62A496DE6768}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuzzConsole", "src\FuzzConsole\FuzzConsole.csproj", "{48742424-3394-43CD-B042-EFBC146AC3F1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3C82E1C5-0F8F-4B34-9D57-61BFADBE6378}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +35,10 @@ Global
 		{95CAA45D-0560-4383-A9D7-62A496DE6768}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95CAA45D-0560-4383-A9D7-62A496DE6768}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{95CAA45D-0560-4383-A9D7-62A496DE6768}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48742424-3394-43CD-B042-EFBC146AC3F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48742424-3394-43CD-B042-EFBC146AC3F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48742424-3394-43CD-B042-EFBC146AC3F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48742424-3394-43CD-B042-EFBC146AC3F1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,5 +46,9 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{21505BA6-9573-4E11-90D2-EAB6C1B0B7FC} = {6A33BE94-AEA3-4665-B630-5B1397684674}
 		{95CAA45D-0560-4383-A9D7-62A496DE6768} = {62F5B20C-0E9E-4AAE-A7CF-9194D8DFA6A5}
+		{48742424-3394-43CD-B042-EFBC146AC3F1} = {6A33BE94-AEA3-4665-B630-5B1397684674}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3F5F450E-B271-491E-BFB9-6F4C9A6D96F2}
 	EndGlobalSection
 EndGlobal
