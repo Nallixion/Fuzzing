@@ -1,14 +1,13 @@
 using System;
 using Xunit;
 using FuzzLib;
+using Microsoft.VisualStudio.TestPlatform.Utilities;
 
 namespace FuzzLib.Tests
 {
-    public class FuzzClassTest
-    {
+    public class FuzzClassTest {
         [Fact]
-        public void FuzzMe_ValidIntegerInput_ShouldParseAndPerformOperations()
-        {
+        public void FuzzMe_ValidIntegerInput_ShouldParseAndPerformOperations() {
             // Arrange
             var fuzzClass = new FuzzClass();
             var input = "10";
@@ -21,8 +20,7 @@ namespace FuzzLib.Tests
         }
 
         [Fact]
-        public void FuzzMe_InvalidIntegerInput_ShouldHandleFormatException()
-        {
+        public void FuzzMe_InvalidIntegerInput_ShouldHandleFormatException() {
             // Arrange
             var fuzzClass = new FuzzClass();
             var input = "abc";
@@ -35,8 +33,7 @@ namespace FuzzLib.Tests
         }
 
         [Fact]
-        public void FuzzMe_ZeroInput_ShouldHandleDivideByZeroException()
-        {
+        public void FuzzMe_ZeroInput_ShouldHandleDivideByZeroException() {
             // Arrange
             var fuzzClass = new FuzzClass();
             var input = "0";
@@ -49,8 +46,7 @@ namespace FuzzLib.Tests
         }
 
         [Fact]
-        public void FuzzMe_NegativeIntegerInput_ShouldParseAndPerformOperations()
-        {
+        public void FuzzMe_NegativeIntegerInput_ShouldParseAndPerformOperations() {
             // Arrange
             var fuzzClass = new FuzzClass();
             var input = "-10";
@@ -119,6 +115,22 @@ namespace FuzzLib.Tests
             Assert.Contains("Result after addition: 100", output);
             Assert.Contains("Result after subtraction: -50", output);
             Assert.DoesNotContain("Unexpected result", output); // Additional check
+        }
+
+        [Theory]
+        [InlineData(1, 2, 3)]
+        [InlineData(-4, -6, -10)]
+        [InlineData(-2, 2, 0)]
+        [InlineData(int.MinValue, -1, int.MaxValue)]
+        public void FuzzMe_Theory(int value1, int value2, int expected) {
+            // Arrange
+            var fuzzClass = new FuzzClass();
+
+            // Act
+            var result = fuzzClass.Add(value1, value2);
+
+            // Assert
+            Assert.Equal(expected, result);
         }
     }
 }

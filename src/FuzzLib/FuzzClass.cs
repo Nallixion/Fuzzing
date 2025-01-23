@@ -31,4 +31,7 @@ public class FuzzClass
             Console.WriteLine("An unexpected error occurred: " + ex.Message);
         }
     }
+    public int Add(int value1, int value2) {
+        return value1 + value2;
+    }
 }
