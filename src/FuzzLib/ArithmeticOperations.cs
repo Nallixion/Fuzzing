@@ -5,11 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace FuzzLib {
-    public class ArithmeticOperations {
+    public class ArithmeticOperations : IArithmeticOperations {
         private int number;
 
         public ArithmeticOperations(int initialNumber) {
             number = initialNumber;
+        }
+
+        public ArithmeticOperations() {
+            
         }
 
         public int Add(int value) {
@@ -48,6 +52,10 @@ namespace FuzzLib {
 
         public int GetValue() {
             return number;
+        }
+
+        public void SetValue(int value) {
+            number = value;
         }
 
         public void Increment() {

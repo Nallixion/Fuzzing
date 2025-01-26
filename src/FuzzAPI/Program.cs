@@ -1,4 +1,6 @@
 
+using FuzzLib;
+
 using Serilog;
 using Serilog.Events;
 using Serilog.Sinks.SpectreConsole;
@@ -16,6 +18,8 @@ namespace FuzzAPI {
             builder.Services.AddControllers();
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
             builder.Services.AddOpenApi();
+
+            builder.Services.AddScoped<IArithmeticOperations, ArithmeticOperations>();
 
             var app = builder.Build();
 

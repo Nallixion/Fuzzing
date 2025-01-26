@@ -1,3 +1,5 @@
+using FuzzLib;
+
 using Microsoft.AspNetCore.Mvc;
 
 namespace FuzzAPI.Controllers {
@@ -11,8 +13,11 @@ namespace FuzzAPI.Controllers {
 
         private readonly ILogger<WeatherForecastController> _logger;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger) {
+        private readonly IArithmeticOperations _arithmeticOperations;
+
+        public WeatherForecastController(ILogger<WeatherForecastController> logger, IArithmeticOperations arithmeticOperations) {
             _logger = logger;
+            _arithmeticOperations = arithmeticOperations;
         }
 
         [HttpGet(Name = "GetWeatherForecast")]
@@ -27,6 +32,8 @@ namespace FuzzAPI.Controllers {
 
         [HttpPost(Name = "PostWeatherForecast")]
         public IEnumerable<WeatherForecast> Post([FromBody]WeatherForecast forecast) {
+            _arithmeticOperations.SetValue(int.MinValue);
+            _arithmeticOperations.CheckedSubtract(forecast.TemperatureC);
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast {
                 Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
                 TemperatureC = Random.Shared.Next(-20, 55),
