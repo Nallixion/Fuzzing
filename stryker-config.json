@@ -24,7 +24,7 @@
       "low": 60,
       "break": 0
     },
-    "verbosity": "trace",
+    "verbosity": "info",
     "reporters": [
       "Progress",
       "Html"
