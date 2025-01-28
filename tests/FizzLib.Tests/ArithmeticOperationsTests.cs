@@ -29,6 +29,7 @@ namespace FuzzLib.Tests {
         [InlineData(1, 2, -1)]
         [InlineData(-4, -6, 2)]
         [InlineData(-2, 2, -4)]
+        [InlineData(1, 0, 1)]
         [InlineData(int.MinValue, 1, int.MaxValue)]
         public void TheoryCheckedSubtract(int value1, int value2, int expected) {
             ArithmeticOperations operations = new ArithmeticOperations(value1);

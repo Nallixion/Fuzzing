@@ -121,6 +121,7 @@ namespace FuzzLib.Tests
         [InlineData(1, 2, 3)]
         [InlineData(-4, -6, -10)]
         [InlineData(-2, 2, 0)]
+        [InlineData(1, 0, 1)]
         [InlineData(int.MinValue, -1, int.MaxValue)]
         public void FuzzMe_Theory(int value1, int value2, int expected) {
             // Arrange
