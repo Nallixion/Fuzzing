@@ -32,7 +32,7 @@ namespace FuzzAPI.Controllers {
 
         [HttpPost(Name = "PostWeatherForecast")]
         public IEnumerable<WeatherForecast> Post([FromBody]WeatherForecast forecast) {
-            _arithmeticOperations.SetValue(int.MinValue);
+            _arithmeticOperations.SetValue(int.MinValue + 100);
             _arithmeticOperations.CheckedSubtract(forecast.TemperatureC);
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast {
                 Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
