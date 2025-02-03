@@ -398,3 +398,4 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/slow-unit-a6a2a7fbca35e0f7a662e64f9a2b34a42fb280c4
