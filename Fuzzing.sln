@@ -17,12 +17,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 		.gitignore = .gitignore
+		.config\dotnet-tools.json = .config\dotnet-tools.json
 		LICENSE = LICENSE
 		README.md = README.md
 		stryker-config.json = stryker-config.json
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuzzAPI", "src\FuzzAPI\FuzzAPI.csproj", "{0872B14E-BCE1-453B-BB7D-9C4211C66937}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinSharpFuzz.Tests", "tests\WinSharpFuzz.Tests\WinSharpFuzz.Tests.csproj", "{3754C69A-5594-4A7E-93F7-DB4178B13B78}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -46,6 +49,10 @@ Global
 		{0872B14E-BCE1-453B-BB7D-9C4211C66937}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0872B14E-BCE1-453B-BB7D-9C4211C66937}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0872B14E-BCE1-453B-BB7D-9C4211C66937}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3754C69A-5594-4A7E-93F7-DB4178B13B78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3754C69A-5594-4A7E-93F7-DB4178B13B78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3754C69A-5594-4A7E-93F7-DB4178B13B78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3754C69A-5594-4A7E-93F7-DB4178B13B78}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +62,7 @@ Global
 		{95CAA45D-0560-4383-A9D7-62A496DE6768} = {62F5B20C-0E9E-4AAE-A7CF-9194D8DFA6A5}
 		{48742424-3394-43CD-B042-EFBC146AC3F1} = {6A33BE94-AEA3-4665-B630-5B1397684674}
 		{0872B14E-BCE1-453B-BB7D-9C4211C66937} = {6A33BE94-AEA3-4665-B630-5B1397684674}
+		{3754C69A-5594-4A7E-93F7-DB4178B13B78} = {62F5B20C-0E9E-4AAE-A7CF-9194D8DFA6A5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3F5F450E-B271-491E-BFB9-6F4C9A6D96F2}
