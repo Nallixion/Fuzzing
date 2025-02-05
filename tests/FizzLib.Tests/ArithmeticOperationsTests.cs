@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using FuzzDotNet.Core.Generation;
+using FuzzDotNet.Xunit;
+
 namespace FuzzLib.Tests {
     public class ArithmeticOperationsTests {
         [Fact]
@@ -13,12 +16,20 @@ namespace FuzzLib.Tests {
             Assert.Equal(150, result); // Good practice, but input change may not alter outcome
         }
 
+        [Theory]
+        [FuzzDotNet.Xunit.FuzzData]
+        public void TheoryFuzzDataSubtract([UniformIntGenerator(Min = 0, Max = 100)] int value1, int value2, int expected) {
+            ArithmeticOperations operations = new ArithmeticOperations(value1);
+            int result = operations.Subtract(value2);
+            Assert.Equal(expected, result);
+        }
 
         [Theory]
         [InlineData(1, 2, -1)]
         [InlineData(-4, -6, 2)]
         [InlineData(-2, 2, -4)]
         [InlineData(int.MinValue, 1, int.MaxValue)]
+        [FuzzDotNet.Xunit.FuzzData]
         public void TheorySubtract(int value1, int value2, int expected) {
             ArithmeticOperations operations = new ArithmeticOperations(value1);
             int result = operations.Subtract(value2);
