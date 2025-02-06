@@ -18,10 +18,10 @@ namespace FuzzLib.Tests {
 
         [Theory]
         [FuzzDotNet.Xunit.FuzzData]
-        public void TheoryFuzzDataSubtract([UniformIntGenerator(Min = 0, Max = 100)] int value1, int value2, int expected) {
-            ArithmeticOperations operations = new ArithmeticOperations(value1);
+        public void TheoryFuzzDataSubtract([UniformIntGenerator(Min = 0, Max = int.MaxValue)]  int value2) {
+            ArithmeticOperations operations = new ArithmeticOperations(0);
             int result = operations.Subtract(value2);
-            Assert.Equal(expected, result);
+            Assert.Equal(-value2, result);
         }
 
         [Theory]
