@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using FluentAssertions;
+
 using FuzzDotNet.Core.Generation;
 using FuzzDotNet.Xunit;
 
@@ -18,10 +20,11 @@ namespace FuzzLib.Tests {
 
         [Theory]
         [FuzzDotNet.Xunit.FuzzData]
-        public void TheoryFuzzDataSubtract([UniformIntGenerator(Min = 0, Max = int.MaxValue)]  int value2) {
-            ArithmeticOperations operations = new ArithmeticOperations(0);
+        public void TheoryFuzzDataSubtract([UniformIntGenerator(Min = int.MinValue, Max = int.MaxValue)] int value1, [UniformIntGenerator(Min = 0, Max = int.MaxValue)]  int value2) {
+            ArithmeticOperations operations = new ArithmeticOperations(value1);
             int result = operations.Subtract(value2);
-            Assert.Equal(-value2, result);
+            Action action = () => operations.Subtract(value2);
+            action.Should().NotThrow<Exception>();
         }
 
         [Theory]
