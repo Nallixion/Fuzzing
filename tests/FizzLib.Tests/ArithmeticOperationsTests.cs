@@ -19,11 +19,11 @@ namespace FuzzLib.Tests {
         }
 
         [Theory]
-        [FuzzDotNet.Xunit.FuzzData]
-        public void TheoryFuzzDataSubtract([UniformIntGenerator(Min = int.MinValue, Max = int.MaxValue)] int value1, [UniformIntGenerator(Min = 0, Max = int.MaxValue)]  int value2) {
+        [FuzzMoreData(Iterations = 500)]
+        public void TheoryFuzzDataSubtract([UniformIntGenerator(Min = int.MinValue + 100000, Max = int.MinValue + 10000000)] int value1, [UniformIntGenerator(Min = 0, Max = int.MaxValue - 10000000)]  int value2) {
             ArithmeticOperations operations = new ArithmeticOperations(value1);
-            int result = operations.Subtract(value2);
-            Action action = () => operations.Subtract(value2);
+            int result = operations.CheckedSubtract(value2);
+            Action action = () => operations.CheckedSubtract(value2);
             action.Should().NotThrow<Exception>();
         }
 
