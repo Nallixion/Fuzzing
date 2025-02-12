@@ -6,6 +6,14 @@ namespace FuzzLib.Tests
 {
     public class StringManipulationTests
     {
+        [Theory]
+        [FuzzMoreData]
+        public void FuzzConcatenate_ShouldReturnConcatenatedString(string first, string second) {
+            var manipulator = new StringManipulation();
+            var result = manipulator.Concatenate(first, second);
+            Assert.Equal(first + second, result);
+        }
+
         [Fact]
         public void Reverse_InputIsNull_ShouldReturnNull()
         {
